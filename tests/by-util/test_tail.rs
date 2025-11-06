@@ -241,13 +241,13 @@ fn test_n0_with_follow() {
     child.make_assertion_with_delay(500).is_alive();
 
     // Append a new line
-    at.append(test_file, "new\n");
+    at.append(test_file, "new");
 
     // Should only print the newly appended line
     child
         .make_assertion_with_delay(DEFAULT_SLEEP_INTERVAL_MILLIS)
         .with_current_output()
-        .stdout_contains("new");
+        .stdout_only("new");
     child.kill();
 }
 
