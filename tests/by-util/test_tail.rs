@@ -231,6 +231,7 @@ fn test_nc_0_wo_follow2() {
 }
 
 #[test]
+#[cfg(not(target_os = "windows"))]
 fn test_n0_with_follow() {
     let (at, mut ucmd) = at_and_ucmd!();
     let test_file = "test.txt";
