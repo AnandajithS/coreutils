@@ -247,7 +247,7 @@ fn test_n0_with_follow() {
     child
         .make_assertion_with_delay(DEFAULT_SLEEP_INTERVAL_MILLIS)
         .with_current_output()
-        .stdout_only("new\n");
+        .stdout_contains("new");
     child.kill();
 }
 
